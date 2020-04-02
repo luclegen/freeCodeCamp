@@ -1,7 +1,7 @@
 // write your code here
 const JSX = <div>
-                <h1>Heading 1</h1>
-                <p>Paragraph</p>
+                <h1></h1>
+                <p></p>
                 <ul>
                     <li>One</li>
                     <li>Two</li>
