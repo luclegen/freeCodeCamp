@@ -14,7 +14,7 @@ class MyComponent extends React.Component {
       return state.visibility
               ? {visibility: false}
               : {visibility: true}
-    })
+    });
   }
   // change code above this line
   render() {
