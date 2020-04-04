@@ -5,10 +5,7 @@ class OnlyEvens extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
      // change code below this line
-    if (nextProps.value % 2 === 0) {
-      this.props.value = nextProps.value;
-      return true;
-    }
+    return (nextProps.value % 2 === 0);
      // change code above this line
   }
   componentDidUpdate() {
