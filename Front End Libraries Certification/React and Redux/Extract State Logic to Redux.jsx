@@ -1,8 +1,8 @@
 // define ADD, addMessage(), messageReducer(), and store here:
 const ADD = 'ADD', addMessage = message => ({
   type: ADD,
-  message: message
-})
+  message
+});
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
