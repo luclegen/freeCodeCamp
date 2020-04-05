@@ -7,13 +7,10 @@ const authReducer = (state = defaultState, action) => {
   // switch (action.type) {
   //   case 'LOGIN':
   //     return {authenticated: true};
-  //     break;
   //   case 'LOGOUT':
   //     return {authenticated: false};
-  //     break;
   //   default:
   //     return state;
-  //     break;
   // }
   return action.type === 'LOGIN'
           ? {authenticated: true}
