@@ -1,38 +1,19 @@
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-
-const counterReducer = (state = 0, action) => {
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
+    case 'REMOVE_ITEM':
+      // don't mutate state here or the tests will failt
+      return state.slice(0, action.index).concat(state.slice(action.index + 1))
+      // return state.concat
     default:
       return state;
   }
 };
 
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
-
-const authReducer = (state = {authenticated: false}, action) => {
-  switch(action.type) {
-    case LOGIN:
-      return {
-        authenticated: true
-      }
-    case LOGOUT:
-      return {
-        authenticated: false
-      }
-    default:
-      return state;
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
   }
-};
+}
 
-const rootReducer = Redux.combineReducers({
-  count: counterReducer,
-  auth: authReducer
-}); // define the root reducer here
-
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(immutableReducer);
