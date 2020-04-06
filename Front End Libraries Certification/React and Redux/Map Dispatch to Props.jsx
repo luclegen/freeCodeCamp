@@ -11,4 +11,3 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addMessage(message));
   }
 })
-console.log(mapDispatchToProps("a"));
